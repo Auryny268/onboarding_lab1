@@ -27,6 +27,19 @@ target_sources(hello_world PRIVATE hello.cpp)
 
 ^ Above lines tells cmake about new executable "hello_world" and its source code file "hello.cpp".
 
+`make` and `cmake` unrelated: 
+- `make` - build system, produces program executable
+- `cmake` - metabuild system, produces other build systems
+`ninja` - also build system (*What's the difference between `make` and `ninja`?*)
+
+```
+{
+rm -rf *            # Removes old files from build directory to prevent errors
+cmake -G ninja ..   # Produces "ninja" build system
+}
+```
+
+
 ### C++ Compiler
 ![C++ Compiler System](https://static.javatpoint.com/cpages/images/compilation-process-in-c2.png)
 - **Preprocessor**: Generates expanded source code file (.i). Handles lines starting with '#'[^1], i.e.
