@@ -13,6 +13,10 @@ Valid arguments (targets) for `make`:
 - hello.i -> expanded hello.cpp code file (i.e. file output by preprocessor)
 - hello.s -> hello.cpp assembly file (i.e. code translated into assembly language)
 
+## Questions
+- Why is it important to stage changes vs. save all and committing?
+- What's the difference between `make` and `ninja`?
+
 ## Additional Notes:
 cmake is toolchain program: runs several tools such as compilers, linker, simulators, etc. 
 
@@ -30,7 +34,7 @@ target_sources(hello_world PRIVATE hello.cpp)
 `make` and `cmake` unrelated: 
 - `make` - build system, produces program executable
 - `cmake` - metabuild system, produces other build systems
-`ninja` - also build system (*What's the difference between `make` and `ninja`?*)
+`ninja` - also build system 
 
 ```
 {
