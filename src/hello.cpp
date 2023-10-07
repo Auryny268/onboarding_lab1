@@ -1,9 +1,10 @@
 #include <iostream>
-#include <name.hpp>
+#include "name.hpp"
 using namespace std;
 
 int main() {
-    cout << "Hello World" << endl;
+    const string username = get_user_name();
+    cout << "Hello World" << username << endl;
     return 0;
 }
 
