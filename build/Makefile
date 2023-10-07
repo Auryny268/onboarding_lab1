@@ -116,6 +116,43 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named hello_world
+
+# Build rule for target.
+hello_world: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world
+.PHONY : hello_world
+
+# fast build rule for target.
+hello_world/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/build
+.PHONY : hello_world/fast
+
+hello.o: hello.cpp.o
+.PHONY : hello.o
+
+# target to build an object file
+hello.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello.cpp.o
+.PHONY : hello.cpp.o
+
+hello.i: hello.cpp.i
+.PHONY : hello.i
+
+# target to preprocess a source file
+hello.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello.cpp.i
+.PHONY : hello.cpp.i
+
+hello.s: hello.cpp.s
+.PHONY : hello.s
+
+# target to generate assembly for a file
+hello.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello_world.dir/build.make CMakeFiles/hello_world.dir/hello.cpp.s
+.PHONY : hello.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... hello_world"
+	@echo "... hello.o"
+	@echo "... hello.i"
+	@echo "... hello.s"
 .PHONY : help
 
 
