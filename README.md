@@ -1,5 +1,6 @@
 # Onboarding Lab 1  (NYU ProcDesign)
 
+## Make Note
 I am using cmake version 3.27.6 for this lab. Major - 3; Minor - 27; Patch - 6.
 
 Valid arguments (targets) for `make`:
@@ -13,9 +14,16 @@ Valid arguments (targets) for `make`:
 - hello.i -> expanded hello.cpp code file (i.e. file output by preprocessor)
 - hello.s -> hello.cpp assembly file (i.e. code translated into assembly language)
 
+## Answer the Following
+`target_sources` is relative to files `hello.cpp` and `name.cpp`. `target_include_directories`is relative to `include` folder.
+
+`cmake` is a metabuild system - it produces other build systems like `make` and `ninja`, which produce executables for our programs.
+
+`cmake` will generate a ton of files when it runs; we don't want to clutter our main directory so we make a `build` directory instead.
+
 ## Questions
 - Why is it important to stage changes vs. save all and committing?
-- What's the difference between `make` and `ninja`?
+- Why do we have specify individual files for `target_sources` vs. the folder they're in?
 
 ## Additional Notes:
 cmake is toolchain program: runs several tools such as compilers, linker, simulators, etc. 
@@ -34,7 +42,7 @@ target_sources(hello_world PRIVATE hello.cpp)
 `make` and `cmake` unrelated: 
 - `make` - build system, produces program executable
 - `cmake` - metabuild system, produces other build systems
-`ninja` - also build system 
+`ninja` - also build system. Is made to be very fast, rather than convenient(?)
 
 ```
 {
@@ -42,7 +50,6 @@ rm -rf *            # Removes old files from build directory to prevent errors
 cmake -G ninja ..   # Produces "ninja" build system
 }
 ```
-
 
 ### C++ Compiler
 ![C++ Compiler System](https://static.javatpoint.com/cpages/images/compilation-process-in-c2.png)
